@@ -8,8 +8,13 @@ import { FormControl } from '@chakra-ui/react';
 
 
 const MyCounter = () => {
-    const { count, increment, decrement, isDisabledButton, handleInputChange } = useCounter(1);
+    const { count, increment, decrement, setCount } = useCounter();
+    const handleInputChange = (e) => setCount(e.target.value);
     console.log('render Counter');
+    const isDisabledButton = count <= 1;
+        
+    
+    
 
     return (
         
